@@ -1,0 +1,34 @@
+ALGORITHM NUMBER_WORD(string input)
+VAR
+   count,numvol,i: INTEGER :=0;
+   numword:INTEGER :=1;
+   sentence:string;
+
+BEGIN
+
+REPEAT
+    Write("Enter the sentence",sentence)
+UNTIL (sentence(sentence.length())=='.' and sentence.length()>=2)
+ Read(sentence);
+
+FOR i FROM 0 TO sentence.length() DO
+
+    While (sentence[i] <>'.') do
+       IF (sentence[i] ==' ') THEN
+           numword:=numword+1;
+
+       ELSE_IF (sentence[i] =='a' or sentence[i] =='e' or sentence[i] =='i' or sentence[i] =='o' or sentence[i] =='u') THEN
+           count:=count+1;
+           numvol:=numvol+1;
+
+         ELSE count:=count+1;
+       END_IF
+    End While
+    i:=i+1;
+END_FOR
+    return("Total number of characters in a string:"count);
+    return("Total number of vowels in a string:"numvol);
+    return("Total number of words in a string:"numword);
+
+       
+END
